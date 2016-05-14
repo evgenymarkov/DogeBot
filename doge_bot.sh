@@ -91,7 +91,7 @@ do
 	res="$(curl -s $UPD_URL$offset)"
 	[[ $res == "null" ]] && { echo "Null appeared"; continue; }
 	
-    offset=$(jq '.result[0].update_id' <<< $res)
+        offset=$(jq '.result[0].update_id' <<< $res)
 	offset=$(( offset + 1 ))
 
 	if (( $offset != 1 ))
